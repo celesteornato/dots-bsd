@@ -10,6 +10,7 @@ window#waybar {
   background-color: #181825;
   transition-property: background-color;
   transition-duration: 0.5s;
+  opacity: 0.9;
 }
 
 window#waybar.hidden {
@@ -50,12 +51,14 @@ window#waybar.hidden {
   background-color: #f38ba8;
 }
 
-#clock,
+#cpu,
+#custom-clock,
 #memory,
 #custom-power,
+#temperature,
 #battery,
 #backlight,
-#wireplumber,
+#pulseaudio,
 #network,
 #tray {
   border-radius: 4px;
@@ -67,6 +70,7 @@ window#waybar.hidden {
 
 #custom-power {
   margin-right: 6px;
+  /* font-size: 15px; */
 }
 
 #custom-logo {
@@ -75,13 +79,20 @@ window#waybar.hidden {
   margin-left: 5px;
   font-size: 18px;
   border-radius: 8px 0px 0px 8px;
-  color: #D01111;
+  color: #F03111;
+}
+#custom-logo:hover {
+  background-color: #F03111;
+  color: #111111;
 }
 
+
+#cpu,
 #memory {
   background-color: #fab387;
 }
 
+#temperature,
 #battery {
   background-color: #f38ba8;
 }
@@ -102,7 +113,7 @@ window#waybar.hidden {
   background-color: #fab387;
 }
 
-#wireplumber {
+#pulseaudio {
   background-color: #f9e2af;
 }
 
@@ -111,7 +122,7 @@ window#waybar.hidden {
   padding-right: 17px;
 }
 
-#clock {
+#custom-clock {
   font-family: JetBrainsMono Nerd Font;
   background-color: #cba6f7;
 }
