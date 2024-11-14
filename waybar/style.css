@@ -1,110 +1,133 @@
 * {
-    font-family: SF Pro Display;
-    font-size: 18;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13px;
 }
 
 window#waybar {
-  background-color: rgba(242, 243, 244, 0.45);
-  /*background-color: rgba(27, 27, 27, 0.4);*/
+  background-color: #181825;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-#custom-app-menu,
-#window,
-#custom-files,
-#custom-browser,
-#custom-chats,
-#custom-terminal,
-#custom-clipboard,
-#custom-configuration,
-#custom-media,
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  all: initial;
+  /* Remove GTK theme values (waybar #1351) */
+  min-width: 0;
+  /* Fix weird spacing in materia (waybar #450) */
+  box-shadow: inset 0 -3px transparent;
+  /* Use box-shadow instead of border so the text isn't offset */
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#workspaces button.active {
+  color: #1e1e2e;
+  background-color: #cdd6f4;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #1e1e2e;
+  background-color: #cdd6f4;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
+#clock,
+#memory,
+#custom-power,
 #battery,
-#tray,
-#custom-chatgpt,
-#custom-all-apps,
-#custom-recording,
-#custom-do-not-disturb,
-#clock {
-  /*color: #f2f3f4;*/
-  color: #1b1b1b;
-  padding: 2px 0px 2px 0px;
-  font-weight: 500;
+#backlight,
+#wireplumber,
+#network,
+#tray {
+  border-radius: 4px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background-color: #1e1e2e;
+  color: #181825;
 }
 
-#custom-app-menu {
-  color: #801b1b;
-  font-size: 24;
-  margin-left: 14px;
-  padding: 1px 0px 3px 0px;
+#custom-power {
+  margin-right: 6px;
 }
 
-#window {
-  font-weight: bold;
-  margin-left: 15px;
+#custom-logo {
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-left: 5px;
+  font-size: 18px;
+  border-radius: 8px 0px 0px 8px;
+  color: #D01111;
 }
 
-#custom-files {
-  margin-left: 18px;
-}
-
-#custom-browser {
-  margin-left: 18px;
-}
-
-#custom-chats {
-  margin-left: 18px;
-}
-
-#custom-terminal {
-  margin-left: 18px;
-}
-
-#custom-clipboard {
-  margin-left: 18px;
-}
-
-#custom-configuration {
-  margin-left: 18px;
-}
-
-#custom-media {
-  font-size: 11;
-  margin-right: 27px;
+#memory {
+  background-color: #fab387;
 }
 
 #battery {
-  font-size: 30;
-  margin-right: 17px;
+  background-color: #f38ba8;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0000;
+  color: #FFFF00;
 }
 
 #battery.charging {
-  font-size: 30;
+  background-color: #a6e3a1;
+  color: #181825;
 }
 
-#battery.critical {
-  font-size: 30;
+#backlight {
+  background-color: #fab387;
 }
 
-#custom-chatgpt {
-  font-size: 13;
-  margin-left: 13px;
+#wireplumber {
+  background-color: #f9e2af;
 }
 
-#custom-all-apps {
-  font-size: 30;
-  margin-left: 17px;
-}
-
-#custom-recording {
-  font-size: 12;
-  margin-right: 15px;
-}
-
-#custom-do-not-disturb {
-  margin-left: 17px;
-  /*padding: 3px 0px 1px 0px;*/
+#network {
+  background-color: #94e2d5;
+  padding-right: 17px;
 }
 
 #clock {
-  margin-left: 15px;
-  margin-right: 14px;
+  font-family: JetBrainsMono Nerd Font;
+  background-color: #cba6f7;
+}
+
+#custom-power {
+  background-color: #f2cdcd;
+}
+
+
+tooltip {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #131822;
+}
+
+tooltip label {
+  padding: 5px;
+  background-color: #131822;
 }
