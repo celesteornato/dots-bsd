@@ -109,6 +109,7 @@ window#waybar.hidden {
   color: #181825;
 }
 
+#tray,
 #backlight {
   background-color: #fab387;
 }

@@ -20,7 +20,7 @@
         "memory",
         "temperature",
         "battery",
-        "tray",
+        // "tray",
         "custom/power"
     ],
     // Modules configuration
@@ -50,7 +50,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
     "custom/clock": {
