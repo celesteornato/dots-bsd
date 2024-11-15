@@ -83,9 +83,17 @@ window#waybar.hidden {
 #custom-network {
   color: #ffff60;
 }
+#custom-network:hover {
+  background-color: #ffff60;
+  color: #000000;
+}
 
 #pulseaudio {
   color: #a6e3a1;
+}
+#pulseaudio:hover {
+  background-color: #a6e3a1;
+  color: #000000;
 }
 
 #custom-logo:hover {
@@ -105,11 +113,25 @@ window#waybar.hidden {
   color: #FFFF00;
 }
 
+#battery.critical:hover,
+#battery.urgent:hover {
+  background-color: #ff0000;
+  color: #FFFF00;
+}
+
 #battery {
   color: #89dceb
 }
+#battery:hover {
+  background-color: #89dceb;
+  color: #000000;
+}
 #battery.plugged {
   color: #56ff89;
+}
+#battery.plugged:hover {
+  color: #000000;
+  background-color: #56ff89;
 }
 
 
@@ -122,6 +144,10 @@ window#waybar.hidden {
   color: #ff7777;
 }
 #temperature.critical {
+  background-color: #ff0000;
+  color: #000000
+}
+#temperature.critical:hover {
   background-color: #ff0000;
   color: #000000
 }

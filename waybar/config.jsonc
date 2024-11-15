@@ -39,6 +39,8 @@
     },
     "custom/clock": {
         "exec": "date +'%d. %b %H:%M'",
+        "exec-tooltip": "cal",
+        "tooltip-format": "{}",
         "interval": 10
     },
     "cpu": {
@@ -85,7 +87,10 @@
       }
     },
     "pulseaudio": {
+        "interval": 1,
         "scroll-step": 1, // %, can be a float
+        "on-scroll-up": "mixer vol=+0.01", 
+        "on-scroll-down": "mixer vol=-0.01",
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
