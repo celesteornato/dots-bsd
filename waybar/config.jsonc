@@ -1,30 +1,26 @@
-// -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "layer": "top",
+    "position": "top",
+    "margin": "5 10 0",
+    "spacing": 4,
     "modules-left": [
         "custom/logo",
         "hyprland/workspaces",
+        "tray",
     ],
     "modules-center": [
-        "battery",
         "custom/clock",
-        "custom/network",
     ],
     "modules-right": [
+        "custom/network",
         "pulseaudio",
-        "cpu",
-        "memory",
         "temperature",
-        "tray",
+        "battery",
         "custom/power",
     ],
     "custom/network": {
         "exec" : "ifconfig | grep 'ssid' | awk '{print $2}'",
+        "on-click": "wpa_gui",
         "interval": 5,
         "format": "Wifi: {}",        
     },
@@ -67,21 +63,15 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
+        "interval": 5,
         "format": "{capacity}% {icon} ",
         "format-full": "{capacity}% {icon} ",
-        "format-charging": "{capacity}%  ",
         "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -121,7 +111,7 @@
     "custom/sleep": {
         "format" : " ZZZ ",
         "tooltip": false,
-        "on-click": "hyprlock"
+        "on-click": "zzz"
     },
     "custom/logo": {
         "format" : "   ",
