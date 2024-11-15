@@ -11,35 +11,23 @@
         "hyprland/workspaces",
     ],
     "modules-center": [
+        "battery",
         "custom/clock",
+        "custom/network",
     ],
     "modules-right": [
         "pulseaudio",
-        "network",
         "cpu",
         "memory",
         "temperature",
-        "battery",
-        // "tray",
-        "custom/power"
+        "tray",
+        "custom/power",
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "custom/network": {
+        "exec" : "ifconfig | grep 'ssid' | awk '{print $2}'",
+        "interval": 5,
+        "format": "Wifi: {}",        
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -83,10 +71,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{capacity}% {icon} ",
+        "format-full": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -105,15 +93,6 @@
         "balanced": "",
         "power-saver": ""
       }
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
@@ -136,6 +115,11 @@
     },
     "custom/power": {
         "format" : " 󰍃 ",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/sleep": {
+        "format" : " ZZZ ",
         "tooltip": false,
         "on-click": "hyprlock"
     },
