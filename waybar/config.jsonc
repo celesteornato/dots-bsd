@@ -19,8 +19,9 @@
         "custom/power",
     ],
     "custom/network": {
-        "exec" : "ifconfig | grep 'ssid' | awk '{print $2}'",
-        "on-click": "wpa_gui",
+        // "exec" : "ifconfig | grep 'ssid' | awk '{print $2}'", // Native wifi
+        "exec": "wpa_cli status | grep '^ssid' | cut -c 6-",
+        "on-click": "wpa_gui -i p2p-dev-wlan0",
         "interval": 5,
         "format": "Wifi: {}",        
     },
@@ -97,7 +98,7 @@
         "format" : " 󰍃 ",
         "tooltip": false,
         "on-click": "hyprlock",
-        "on-click-right": "zzz"
+        "on-click-right": "/home/main/bin/dodo"
     },
     "custom/sleep": {
         "format" : " ZZZ ",

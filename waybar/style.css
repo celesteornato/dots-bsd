@@ -89,11 +89,11 @@ window#waybar.hidden {
 }
 
 #custom-mixer {
-  color: #a6e3a1;
+  color: #56e3ff;
 }
 
 #custom-mixer:hover {
-  background-color: #a6e3a1;
+  background-color: #56e3ff;
   color: #000000;
 }
 

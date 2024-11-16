@@ -1,0 +1,8 @@
+[[language]]
+name = "c"
+auto-format = true
+language-servers = [ "clangd15" ]
+
+[language-server.clangd15]
+command = "clangd15"
+config = {provideFormatter = true}
