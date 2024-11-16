@@ -56,7 +56,7 @@ window#waybar.hidden {
 #custom-power,
 #temperature,
 #battery,
-#pulseaudio,
+#custom-mixer,
 #custom-network,
 #tray {
   border-radius: 4px;
@@ -88,10 +88,11 @@ window#waybar.hidden {
   color: #000000;
 }
 
-#pulseaudio {
+#custom-mixer {
   color: #a6e3a1;
 }
-#pulseaudio:hover {
+
+#custom-mixer:hover {
   background-color: #a6e3a1;
   color: #000000;
 }
@@ -137,8 +138,21 @@ window#waybar.hidden {
 
 #custom-power {
   color: #f2cdcd;
-  margin-right: 6px;
+  font-size: 18;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-left: 6px;
+  border-radius: 0px 8px 8px 0px;
 }
+
+#custom-power:hover {
+  background-color: #f2cdcd;
+  color: #000000;
+}
+
 #tray,
 #temperature {
   color: #ff7777;
